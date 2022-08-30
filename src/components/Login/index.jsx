@@ -5,6 +5,7 @@ import { Logo } from "../Logo";
 import { InputName } from "./../Inputs/Nome/index";
 import { InputSenha } from "./../Inputs/Senha/index";
 import { InputCpf } from "./../Inputs/Cpf/index";
+import useForm from "../../hooks/useForm";
 
 export const FormLogin = () => {
   const [name, setName] = useState("");

@@ -23,3 +23,5 @@ function useForm(valoresIniciais) {
     clearForm,
   };
 }
+
+export default useForm;
