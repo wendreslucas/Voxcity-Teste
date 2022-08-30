@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
+import { FormLogin } from "./../../components/Login/index";
 
-const Login = () => {
+export const Login = () => {
   useEffect(() => {
     document.title = "Voxcity | Login";
   }, []);
@@ -11,5 +12,3 @@ const Login = () => {
     </>
   );
 };
-
-export default Login;

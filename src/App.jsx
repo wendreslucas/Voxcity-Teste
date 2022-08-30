@@ -1,7 +1,13 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
+import { PagesRoot } from "./pages/Root";
 
 function App() {
-  return <div className="App">TESTE</div>;
+  return (
+    <BrowserRouter>
+      <PagesRoot />
+    </BrowserRouter>
+  );
 }
 
 export default App;
