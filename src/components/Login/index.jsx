@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../Logo";
 import { InputName } from "./../Inputs/Nome/index";
 import { InputSenha } from "./../Inputs/Senha/index";
+import { InputCpf } from "./../Inputs/Cpf/index";
 
 export const FormLogin = () => {
   const [name, setName] = useState("");
@@ -31,6 +32,12 @@ export const FormLogin = () => {
               value={value}
               onChange={onChange}
               name="senha"
+            />
+            <InputCpf
+              type="number"
+              label="CPF*"
+              onChange={onChange}
+              value={value}
             />
           </div>
         </div>
