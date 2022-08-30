@@ -20,7 +20,7 @@ export const RegisterContextProvider = ({ children }) => {
       senha,
     };
     api.post("cadastro", user);
-    navigate("/");
+    navigate("/home");
   }
 
   function handleNome(e) {
