@@ -6,12 +6,17 @@ import { InputName } from "./../Inputs/Nome/index";
 import { InputSenha } from "./../Inputs/Senha/index";
 import { InputCpf } from "./../Inputs/Cpf/index";
 import useForm from "../../hooks/useForm";
+import { LoginContext } from "./../../context/LoginContext";
 
 export const FormLogin = () => {
   const [name, setName] = useState("");
   const [senha, setSenha] = useState("");
   const navigate = useNavigate();
-  //const {onSubmit} = React.useContext(LoginContext)
+  const { onSubmit } = React.useContext(LoginContext);
+
+  function handleCreate() {
+    navigate("/cadaster");
+  }
 
   return (
     <div className="Container">
@@ -40,6 +45,12 @@ export const FormLogin = () => {
               onChange={onChange}
               value={value}
             />
+          </div>
+          <button className="Button" text="Enter" />
+          <div className="DivSpan">
+            <button className="btn" onClick={handleCreate}>
+              Novo por aqui? Cadastre-se aqui!
+            </button>
           </div>
         </div>
         <h1> Form Login</h1>
