@@ -1,6 +1,5 @@
 .StyleButton {
   align-items: center;
-
   background: #36a9e0;
   border: none;
   border-radius: 5px;
@@ -16,5 +15,5 @@
 
 .StyleButton:hover {
   opacity: 0.8;
-  cursor: "pointer";
+  cursor: pointer;
 }

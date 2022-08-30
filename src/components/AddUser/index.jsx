@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import "./styles.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Logo } from "../Logo";
@@ -8,24 +8,18 @@ import { InputCpf } from "./../Inputs/Cpf/index";
 import { RegisterContext } from "../../context/RegisterContext";
 import Button from "./../Button/index";
 
-export const AddUser = () => {
+export function AddUser() {
   const navigate = useNavigate();
-  const { createUser } = useContext(RegisterContext);
-  const [nome, setNome] = useState("");
-  const [senha, setSenha] = useState("");
-  const [cpf, setCpf] = useState("");
+  const { handleSubmit, nome, senha, cpf, handleNome, handleSenha, handleCpf } =
+    useContext(RegisterContext);
 
   function handleClose() {
     navigate("/");
   }
 
-  function onSubmit(newUser) {
-    createUser(newUser);
-  }
-
   return (
     <div className="Container">
-      <form className="StyleForm" onSubmit={onSubmit}>
+      <form className="StyleForm">
         <div className="DivHeader">
           <Logo height={"50px"} width={"180px"} />
           <button className="btn" onClick={handleClose}>
@@ -38,25 +32,26 @@ export const AddUser = () => {
               autoFocus
               Label="Nome*"
               type="text"
-              name="name"
+              name="nome"
               value={nome}
-              onChange={(e) => setNome(e.target.value)}
+              onChange={handleNome}
             />
             <InputSenha
               Label="Senha*"
               type="password"
               value={senha}
-              onChange={(e) => setSenha(e.target.value)}
+              onChange={handleSenha}
               name="senha"
             />
             <InputCpf
               type="number"
               Label="CPF*"
-              onChange={cpf}
-              value={(e) => setCpf(e.target.value)}
+              name="cpf"
+              onChange={handleCpf}
+              value={cpf}
             />
           </div>
-          <Button text="Save" />
+          <Button text="Save" onClick={handleSubmit} />
           <div className="DivSpan">
             <Link to="/">
               <span>Já tem uma conta?</span>
@@ -66,4 +61,4 @@ export const AddUser = () => {
       </form>
     </div>
   );
-};
+}

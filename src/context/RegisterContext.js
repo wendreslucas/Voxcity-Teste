@@ -1,28 +1,44 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "./../service/api";
+import { v4 as uuidv4 } from "uuid";
 
 export const RegisterContext = createContext();
 
 export const RegisterContextProvider = ({ children }) => {
   const navigate = useNavigate();
+  const [nome, setNome] = useState("");
+  const [senha, setSenha] = useState("");
+  const [cpf, setCpf] = useState("");
 
-  const createUser = async (newUser) => {
+  function handleSubmit(e) {
+    e.preventDefault();
     const user = {
-      nome: newUser.nome,
-      senha: newUser.senha,
-      cpf: newUser.cpf,
+      id: uuidv4(),
+      nome,
+      cpf,
+      senha,
     };
-    try {
-      await api.post("/user/register", user);
-      navigate("/");
-    } catch (error) {
-      throw new Error(error);
-    }
-  };
+    api.post("cadastro", user);
+    navigate("/");
+  }
+
+  function handleNome(e) {
+    setNome(e.target.value);
+  }
+
+  function handleSenha(e) {
+    setSenha(e.target.value);
+  }
+
+  function handleCpf(e) {
+    setCpf(e.target.value);
+  }
 
   return (
-    <RegisterContext.Provider value={{ createUser }}>
+    <RegisterContext.Provider
+      value={{ handleSubmit, handleNome, handleCpf, handleSenha }}
+    >
       {children}
     </RegisterContext.Provider>
   );

@@ -1,10 +1,16 @@
 {
-  "user": [
+  "cadastro": [
     {
-      "id": 1,
-      "nome": "Wendres Lucas",
-      "cpf": "139.232.387-89",
-      "senha": "123456"
+      "id": "e6215cae-1153-424f-b1a6-f65c065fad15",
+      "nome": "wewe",
+      "cpf": "",
+      "senha": "wewer"
+    },
+    {
+      "id": "a9640c6b-859c-42e8-8c85-1b0c0d31c15e",
+      "nome": "wegwegq",
+      "cpf": "12312312",
+      "senha": "1231q234dwa"
     }
   ]
 }
