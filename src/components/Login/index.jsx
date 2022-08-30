@@ -3,9 +3,11 @@ import "./styles.css";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../Logo";
 import { InputName } from "./../Inputs/Nome/index";
+import { InputSenha } from "./../Inputs/Senha/index";
 
 export const FormLogin = () => {
   const [name, setName] = useState("");
+  const [senha, setSenha] = useState("");
   const navigate = useNavigate();
   //const {onSubmit} = React.useContext(LoginContext)
 
@@ -22,6 +24,13 @@ export const FormLogin = () => {
               name="name"
               value={value}
               onChange={onChange}
+            />
+            <InputSenha
+              Label="Senha*"
+              type="password"
+              value={value}
+              onChange={onChange}
+              name="senha"
             />
           </div>
         </div>
