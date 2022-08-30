@@ -4,15 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../Logo";
 import { InputName } from "./../Inputs/Nome/index";
 import { InputSenha } from "./../Inputs/Senha/index";
-import { InputCpf } from "./../Inputs/Cpf/index";
-import useForm from "../../hooks/useForm";
 import { LoginContext } from "./../../context/LoginContext";
+import Button from "./../Button/index";
+import useForm from "./../../hooks/useForm";
 
-export const FormLogin = () => {
-  const [name, setName] = useState("");
-  const [senha, setSenha] = useState("");
+function FormLogin() {
   const navigate = useNavigate();
   const { onSubmit } = React.useContext(LoginContext);
+  const [nome, setNome] = useState("");
+  const [senha, setSenha] = useState("");
 
   function handleCreate() {
     navigate("/cadaster");
@@ -20,41 +20,36 @@ export const FormLogin = () => {
 
   return (
     <div className="Container">
-      <form className="StyleForm">
+      <form className="StyleForm" onSubmit={onSubmit}>
         <Logo height={"50px"} width={"180px"} />
         <div className="DivBtn">
           <div className="DivInputs">
             <InputName
               autoFocus
-              label="Nome*"
+              Label="Nome*"
               type="text"
-              name="name"
-              value={value}
-              onChange={onChange}
+              name="nome"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
             />
             <InputSenha
               Label="Senha*"
-              type="password"
-              value={value}
-              onChange={onChange}
               name="senha"
-            />
-            <InputCpf
-              type="number"
-              label="CPF*"
-              onChange={onChange}
-              value={value}
+              onChange={(e) => setSenha(e.target.value)}
+              type="password"
+              value={senha}
             />
           </div>
-          <button className="Button" text="Enter" />
+          <Button text="Enter" />
           <div className="DivSpan">
             <button className="btn" onClick={handleCreate}>
               Novo por aqui? Cadastre-se aqui!
             </button>
           </div>
         </div>
-        <h1> Form Login</h1>
       </form>
     </div>
   );
-};
+}
+
+export default FormLogin;

@@ -1,0 +1,19 @@
+.DivHeader {
+  display: grid;
+  grid-template-columns: 25fr 0.2fr;
+}
+
+.btn {
+  margin-right: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  background: transparent;
+  color: #36a9e0;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}

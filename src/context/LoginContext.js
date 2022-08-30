@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../service/api";
+import { api } from "../service/api";
 
 export const LoginContext = createContext();
 
@@ -12,7 +12,6 @@ export const LoginContextProvider = ({ children }) => {
       .post("user", {
         nome: req.nome,
         senha: req.senha,
-        cpf: req.cpf,
       })
       .then((res) => {
         navigate("/home");

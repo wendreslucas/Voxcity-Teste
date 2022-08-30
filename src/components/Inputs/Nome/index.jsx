@@ -1,13 +1,15 @@
 export const InputName = (props) => {
-  const { autoFocus, type, label, margin, onChange, value } = props;
+  const { autoFocus, type, Label, margin, onChange, value } = props;
   return (
-    <input
-      type={type}
-      label={label}
-      margin={margin}
-      onChange={onChange}
-      value={value}
-      autoFocus={autoFocus}
-    />
+    <div className="FormControl">
+      <span className="InputLabel">{Label}</span>
+      <input
+        type={type}
+        margin={margin}
+        onChange={onChange}
+        value={value}
+        autoFocus={autoFocus}
+      />
+    </div>
   );
 };
