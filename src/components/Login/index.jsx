@@ -42,7 +42,7 @@ function FormLogin() {
           </div>
           <Button text="Enter" />
           <div className="DivSpan">
-            <button className="btn" onClick={handleCreate}>
+            <button className="Btn" onClick={handleCreate}>
               Novo por aqui? Cadastre-se aqui!
             </button>
           </div>

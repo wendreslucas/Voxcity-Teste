@@ -1,0 +1,15 @@
+.InputLabel {
+  font-size: 0.8rem;
+}
+
+.InputNome {
+  background-color: #262425;
+  border-radius: 4px;
+  border: 1px solid #777777;
+  color: #8c8080;
+  height: 28px;
+  margin-left: 28px;
+  margin-bottom: 19px;
+  padding: 6px 0 6px 11px;
+  width: 180px;
+}

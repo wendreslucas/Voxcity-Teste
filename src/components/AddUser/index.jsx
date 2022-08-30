@@ -36,7 +36,7 @@ export const AddUser = () => {
           <div className="DivInputs">
             <InputName
               autoFocus
-              label="Nome*"
+              Label="Nome*"
               type="text"
               name="name"
               value={nome}
@@ -51,7 +51,7 @@ export const AddUser = () => {
             />
             <InputCpf
               type="number"
-              label="CPF*"
+              Label="CPF*"
               onChange={cpf}
               value={(e) => setCpf(e.target.value)}
             />
