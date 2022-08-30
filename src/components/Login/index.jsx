@@ -15,7 +15,7 @@ function FormLogin() {
   const [senha, setSenha] = useState("");
 
   function handleCreate() {
-    navigate("/cadaster");
+    navigate("/cadastro");
   }
 
   return (

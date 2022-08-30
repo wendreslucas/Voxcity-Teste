@@ -7,7 +7,6 @@ import { InputSenha } from "./../Inputs/Senha/index";
 import { InputCpf } from "./../Inputs/Cpf/index";
 import { RegisterContext } from "../../context/RegisterContext";
 import Button from "./../Button/index";
-import { IoClose } from "react-icons/io5";
 
 export const AddUser = () => {
   const navigate = useNavigate();
@@ -30,7 +29,7 @@ export const AddUser = () => {
         <div className="DivHeader">
           <Logo height={"50px"} width={"180px"} />
           <button className="btn" onClick={handleClose}>
-            <IoClose />
+            X
           </button>
         </div>
         <div className="DivBtn">
